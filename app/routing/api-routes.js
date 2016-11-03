@@ -14,6 +14,14 @@ module.exports = function (app) {
 		var formSent = req.body;
 		newFriend = new Friend(formSent.name, formSent.photo, formSent.scores);
 		friends.push(newFriend)
+
+		var diff = 0;
+
+		for (i = 0; i < friends.length; i++) {
+			for( j = 0; j < 10; j++) {
+				diff += Math.abs(friends[i].scores[j] - newfriends.scores[j]);
+			}
+		}
 	});
 };
 function Friend(name, photo, scores){
