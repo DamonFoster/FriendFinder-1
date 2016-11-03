@@ -13,15 +13,23 @@ module.exports = function (app) {
 	app.post('/api/friends', function (req, res) {
 		var formSent = req.body;
 		newFriend = new Friend(formSent.name, formSent.photo, formSent.scores);
-		friends.push(newFriend)
+		
 
 		var diff = 0;
+		var min = 41;
+		var index;
 
 		for (i = 0; i < friends.length; i++) {
 			for( j = 0; j < 10; j++) {
 				diff += Math.abs(friends[i].scores[j] - newfriends.scores[j]);
 			}
+			if (diff < min) {
+				min = diff;
+				index = i;
+			}
 		}
+
+		friends.push(newFriend);
 	});
 };
 function Friend(name, photo, scores){
