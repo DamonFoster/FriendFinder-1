@@ -41,11 +41,7 @@ var question = [
 ];
 
 
-function Survey(user, answers){
-  this.name = name;
-  this.photo = photo;
-  this.scores = scores;
-};
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
