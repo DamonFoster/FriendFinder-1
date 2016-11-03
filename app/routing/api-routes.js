@@ -16,11 +16,11 @@ module.exports = function (app) {
 	//              - Each of these objects should roughly follow the format below.
 
 	app.post('/api/friends', function (req, res) {
+		res.name;
+	});
+};
 
-
-		res.name
-
-		{
+var friends = 	[{
   "name":"Ahmed",
   "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
   "scores":[
@@ -35,22 +35,8 @@ module.exports = function (app) {
      4,
      1
    ]
-}
-];
-
-			//var result = new Survey()
-			// if (tableData.length < 5) {
-			// 	tableData.push(req.body);
-			// 	res.json(true); // KEY LINE
-			// } else { // Or false if they don't have a table
-			// 	waitListData.push(req.body);
-			// 	res.json(false); // KEY LINE
-			// }
-
-
-
-
-
+}];
+		
 	// 5.  Determine the user's most compatible friend using the following as a guide:
 	//        5.1 - Convert each user's results into a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]).
 	//        5.2 - With that done, compare the difference between current user's scores against those from other users, question by question. 
@@ -63,5 +49,3 @@ module.exports = function (app) {
 	// The closest match will be the user with the least amount of difference.
 	// Once you've found the current user's most compatible friend, display the result as a modal pop-up.
 	// The modal should display both the name and picture of the closest match. 
-		});
-};
